@@ -128,7 +128,7 @@ class Student(Classroom):
 
         # When creating a team the user is added, fix this by removing
         # auth[0] from the team before the student is added
-        if r_team.json()['members_count'] != 0 and r_team.status_code == 201:
+        if "members_count" in r_team.json() and r_team.json()['members_count'] != 0 and r_team.status_code == 201:
             url_rm_auth = self.url_teams + '/' + str(r_team.json()['id']) + '/members/' + self.auth[0]
             r_remove_auth = delete(url_rm_auth, auth=self.auth)
             if r_remove_auth.status_code != 204:

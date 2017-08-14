@@ -28,7 +28,7 @@ Assignments
 Performing a peer-review
 ------------------------
 1. Run `scripts/copy-attendance-file.py` and mark the students that take part of the group with `x` (this is usefull if some of the students hand in late).
-2. Run `./start_group.py --f Attendance/INF3331-2015-12-01_group1.txt`. This creates github teams of size 3 with access to 3 other student's repositories. Each group should review the student's solutions and push the reports to their repositories.
+2. Run `./start_group.py --m 3 --f Attendance/INF3331-2015-12-01_group1.txt`. This creates github teams of size 3 with access to 3 other student's repositories. Each group should review the student's solutions and push the reports to their repositories.
 
 After review, delete all teams (and with it the access to their peers repositories) with:
 

@@ -1,1 +1,1 @@
-find . -iname assignment4  -type d | cut -d/ -f4 | cut -d- -f2
+find assignment6_solutions -iname assignment6  -type d | cut -d/ -f3 | cut -d- -f2
