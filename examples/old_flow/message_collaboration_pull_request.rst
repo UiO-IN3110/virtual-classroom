@@ -1,5 +1,14 @@
-Dear {name}!
+Dear {{ student.name }}!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+{%- set filtered_group = group.students|rejectattr("name", "equalto", student.name)|list %}
+{%- set filtered_group_names = filtered_group|map(attribute="name")|list %}
+{%- if filtered_group_names|length >= 2 %}
+    {%- set part_group_names = filtered_group_names[:-1]|join(", ") %}
+    {%- set group_names = part_group_names + " and " + filtered_group_names[-1] %}
+{%- else %}
+    {%- set group_names = filtered_group_names|join("") %}
+{%- endif %}
 
 You are receiving this e-mail because you are taking the course INF3331/INF4331
 course and the next peer-review has now started. This peer-review is different to the previous one! You improve the code directly and
