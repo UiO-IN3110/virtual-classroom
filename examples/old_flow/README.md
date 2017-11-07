@@ -31,10 +31,13 @@ Performing a peer-review
 ------------------------
 1. Run `python copy_attendance_file.py` and mark the students that take part of the group with `x` (this is useful if some of the students hand in late).
 2. Alternatively you may run `python mark_active.py` to mark students active since a given date.
-2. Run `python manage_group.py --email_tmp_file emails_assignment4.txt --email_delay 1.0 --f Attendance/students_base-2015-12-01.txt`. This creates github teams of size 3 with access to 3 other student's repositories. Each group should review the student's solutions and push the reports to their repositories. The delay unit is seconds.
+2. Run `python manage_group.py --email_tmp_file emails_assignment4.txt --email_delay 1.0 --f Attendance/students_assignment4.txt`. This creates github teams of size 3 with access to 3 other student's repositories. Each group should review the student's solutions and push the reports to their repositories. The delay unit is seconds.
 
 To continue if sending out emails was interrupted simply run
 `python manage_group.py --email_review_groups True --email_tmp_file emails_assignment4.txt --email_delay 1.0 --f Attendance/students_base-2015-12-01.txt`
+
+For students with an extension, first mark the new students in the file `Attendance/students_assignment4_extension.txt` and then repeat step 2.
+
 
 After review, delete all teams (and with it the access to their peers repositories) with:
 
