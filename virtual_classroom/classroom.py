@@ -131,6 +131,7 @@ class Classroom(object):
         number_not_deleted = 0
         not_deleted = ''
         for team in teams:
+            print(self.org)
             if 'Team-' in team['name']:
                 r = api.delete_team(team['id'])
                 if r.status_code != 204:

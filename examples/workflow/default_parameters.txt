@@ -1,5 +1,5 @@
-university:Virtual-Classroom
-course:Test
+university:UiO
+course:INF3331
 max_students:3
 filepath:Attendance/students_base-%s-%s-%s.txt
 smtp:google
