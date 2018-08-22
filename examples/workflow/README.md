@@ -5,9 +5,9 @@
 ## Start of semester
 
 1. Edit `defaults_parameters.txt`.
-2. Ask students to fill out the Google Form https://docs.google.com/a/simula.no/forms/d/1JGSMC-9sRcuCanLF7MavHlGWVxuOjX-bwcIoyoM4yPE/edit
+2. Ask students to fill out the Google Form (see this template https://docs.google.com/a/simula.no/forms/d/1JGSMC-9sRcuCanLF7MavHlGWVxuOjX-bwcIoyoM4yPE/edit)
 3. Make sure the response Google Spreadsheet has the ordering: *Timestamp, Full name, UiO-Username, Username on Github, Email Address, Course*
-4. Download the student list with `python download_spreadsheet.py`
+4. Update the document name in `download_spreadsheet.py` and download the student list with `python download_spreadsheet.py`
 5. Mark all participating students with an `x` in `Attendance/students_base.txt`
 6. Create a github repository and team for each student with 
 
