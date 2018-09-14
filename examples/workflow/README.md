@@ -9,7 +9,8 @@
 3. Make sure the response Google Spreadsheet has the ordering: *Timestamp, Full name, UiO-Username, Username on Github, Email Address, Course*
 4. Update the document name in `download_spreadsheet.py` and download the student list with `python download_spreadsheet.py`
 5. Mark all participating students with an `x` in `Attendance/students_base.txt`
-6. Create a github repository and team for each student with 
+6. Remove duplicate students (e.g. with `uniq uio_names.txt -c | grep -e ^s*2 | cut -d' ' -f8`
+7. Create a github repository and team for each student with 
 
    `python manage_group.py --i True --no-email --f Attendance/students_base.txt`
 
