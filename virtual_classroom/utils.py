@@ -50,7 +50,7 @@ def download_google_spreadsheet(name, filename=None):
                       " http://gspread.readthedocs.org/en/latest/oauth2.html): ")
 
     # Log on to disk
-    scope = ['https://spreadsheets.google.com/feeds']
+    scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file, scope)
 
     gc = gspread.authorize(credentials)
