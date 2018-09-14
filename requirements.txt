@@ -1,5 +1,5 @@
-gspread
+gspread==0.6.2
 oauth2client
 docutils
 jinja2
-dateutil
+python-dateutil
