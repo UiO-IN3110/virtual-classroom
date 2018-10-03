@@ -9,6 +9,7 @@ try:
     utils.create_students_file_from_csv(csv_str=csv_str, output_filename="Attendance/students_base.txt")
 except Exception as e:
     print("An error occured - exiting")
+    print(e)
     import sys
     sys.exit()
    
