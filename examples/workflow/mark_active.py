@@ -7,7 +7,7 @@ src_file = "Attendance/students_base.txt"
 src_file_input = input("Students file to read from (default: %s): " % src_file)
 src_file = src_file if src_file_input.strip() == "" else src_file_input
 
-active_since = input("Mark students with commits after (date): ")
+active_since = input("Mark students with commits after (date, e.g. 17.9.2017): ")
 
 dst_file = "Attendance/students-active-since-%s" % active_since
 dst_file_input = input("Students file to write to (default: %s): " % dst_file)
