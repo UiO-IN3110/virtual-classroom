@@ -11,7 +11,7 @@ Dear {{ student.name }}!
 {%- endif %}
 
 You are receiving this e-mail because you are taking the INF3331/INF4331
-course and have submitted peer-reviewed assignement. You are now asked to join
+course and have submitted peer-reviewed assignment. You are now asked to join
 a collaboration with {{ filtered_group|length }} of your fellow students.
 Together you are asked to performed peer-review on {{ group.review_repos|length }} other fellow
 solutions.
@@ -25,7 +25,7 @@ yourself. The email addresses of your collaborators are:
 You now have access to push and pull to three (or two) other students repositories.
 Please review the solutions in all of these repositories.
 
-The repositories to be reviewed are listed here: https://github.com/orgs/{{ classroom.org }}/teams/{{ group.team_name }}/repositories.
+The repositories to be reviewed are listed here: https://github.com/orgs/{{ classroom.org }}/teams/{{ group.team_name|lower }}/repositories
 
 You can clone these repositories with:
 
@@ -40,5 +40,5 @@ If you get a "permission denied" error, try changing the URL in the command abov
 Guidelines
 ~~~~~~~~~~
 
-* The guidelines and a Latex template for the feedback file is available here: https://www.overleaf.com/read/zzrxxbxbmqws and should be used (you may alternatively use a Markdown version with the same layout). You can write the review with Overleaf (its free to sign up): open link above and click on "Create a new project to start writing!" to get started.
+* The guidelines and a Latex template for the feedback file is available here:https://www.overleaf.com/read/zzrxxbxbmqws and should be used. You can write the review with Overleaf (its free to sign up) or your own Latex editor: open link above and click on "Create a new project to start writing!" to get started.
 * A review is completed by pushing the review Latex and PDF files to each of the reviewed repositories. The name of the files should be: feedback.tex and feedback.pdf.

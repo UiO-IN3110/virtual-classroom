@@ -11,7 +11,7 @@ Dear {{ student.name }}!
 {%- endif %}
 
 You are receiving this e-mail because you are taking the INF3331/INF4331
-course and have submitted peer-reviewed assignement. You are now asked to join
+course and have submitted peer-reviewed assignment. You are now asked to join
 a collaboration with {{ filtered_group|length }} of your fellow students.
 Together you are asked to performed peer-review on {{ group.review_repos|length }} other fellow
 solutions.
@@ -25,7 +25,7 @@ yourself. The email addresses of your collaborators are:
 You now have access to push and pull to three (or two) other students repositories.
 Please review the solutions in all of these repositories.
 
-The repositories to be reviewed are listed here: https://github.com/orgs/{{ classroom.org }}/teams/{{ group.team_name }}/repositories.
+The repositories to be reviewed are listed here: https://github.com/orgs/{{ classroom.org }}/teams/{{ group.team_name|lower }}/repositories
 
 You can clone these repositories with:
 

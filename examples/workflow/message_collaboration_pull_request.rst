@@ -23,7 +23,7 @@ yourself. The email addresses of your collaborators are:
 You now have pull and fork access to three (or two) other students repositories.
 Please create pull-requests for all these repositories.
 
-The repositories to be reviewed are listed here: https://github.com/orgs/{{ classroom.org }}/teams/{{ group.team_name }}/repositories.
+The repositories to be reviewed are listed here: https://github.com/orgs/{{ classroom.org }}/teams/{{ group.team_name|lower }}/repositories
 
 Instructions
 ~~~~~~~~~~~~
