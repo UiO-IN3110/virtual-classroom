@@ -3,6 +3,7 @@ from requests import get, post, put, delete
 from getpass import getpass
 from json import dumps
 from re import findall
+from sys import exit
 
 # Python3 and 2 compatible
 try: input = raw_input
@@ -71,10 +72,18 @@ class APIManager(object):
 
         # Check if username and password is correct
         r = get(Endpoint.API_URL, auth=(admin, p))
-        if r.status_code != 200:
-            print('Username or password is wrong (GitHub), please try again!')
-            exit(1)
-
+        tries = 1
+        max_tries = 3
+        while r.status_code != 200:
+            if tries >= max_tries:
+                print("Too many authentication attempts. Please restart the script.")
+                exit(1)
+            print('Username or password is wrong (GitHub), please try again! (%s/%s)' % (tries, max_tries))
+            tries += 1
+            admin = input('For GitHub\nUsername: ')
+            p = getpass('Password: ')
+            cls.auth = (admin, p)
+            r = get(Endpoint.API_URL, auth=(admin, p))
         return cls.auth
 
     def delete_repo(self, owner, name):
