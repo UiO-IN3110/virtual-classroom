@@ -14,12 +14,14 @@ except NameError: pass
 
 
 class Feedbacks(object):
-    def __init__(self, university, course, output_path):
+    def __init__(self, university, course, output_path, org=None):
         self.university = university
         self.course = course
         #self.output_path = output_path
 
-        self.org = "%s-%s" % (university, course)
+        self.org = org
+        if self.org is None:
+            self.org = "%s-%s" % (university, course)
 
         # To look up information about students
         attendance_path = os.path.join(os.path.dirname(__file__), \
