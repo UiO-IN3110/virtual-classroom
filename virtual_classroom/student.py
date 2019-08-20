@@ -12,7 +12,7 @@ from .api import APIManager
 class Student(object):
     """Holds all the information about the student."""
 
-    def __init__(self, name, uio_username, username, university, course, email, present, rank):
+    def __init__(self, name, uio_username, username, university, course, email, present, rank, org=None):
         """When initialized it testes if the information is correct and if the
            student has been initialized before. If not it calles create_repository()
         """
@@ -36,7 +36,9 @@ class Student(object):
         self.university = university
 
         # Create useful strings
-        self.org = "%s-%s" % (university, course)
+        self.org = org
+        if self.org is None:
+            self.org = "%s-%s" % (university, course)
 
         # TODO: There probably is a good way to populate this when finding student repo below.
         self.last_active = None

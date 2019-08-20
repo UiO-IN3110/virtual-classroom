@@ -118,7 +118,11 @@ def main():
     elif get_feedback:
         from virtual_classroom.get_all_feedbacks import Feedbacks
         # TODO: Not yet supported.
-        feedbacks = Feedbacks(university, course, get_feedback_filepath)
+        org = None
+        parameters = get_parameters()
+        if "org" in parameters:
+            org = parameters["org"]
+        feedbacks = Feedbacks(university, course, get_feedback_filepath, org=org)
         feedbacks()
 
     else:

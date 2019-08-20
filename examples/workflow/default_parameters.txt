@@ -1,5 +1,6 @@
 university:Virtual-Classroom
 course:Test
+org:TestOrg
 max_students:3
 filepath:Attendance/students_base-%s-%s-%s.txt
 smtp:google

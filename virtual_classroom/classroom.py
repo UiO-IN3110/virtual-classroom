@@ -32,7 +32,10 @@ class Classroom(object):
         parameters = get_parameters()
         self.university = parameters["university"]
         self.course = parameters["course"]
-        self.org = "%s-%s" % (self.university, self.course)
+        if "org" in parameters:
+            self.org = parameters["org"]
+        else:
+            self.org = "%s-%s" % (self.university, self.course)
 
         try:
             raw_students = parse_students_file(filename)
@@ -47,13 +50,14 @@ class Classroom(object):
                 rank = 1  # Rank is not functional at the moment.
                 print("Initialize student {0}".format(student["name"]))
                 self.students[student["username"].lower()] = Student(student["name"],
-                                                             student["uio_username"],
-                                                             student["username"],
-                                                             self.university,
-                                                             self.course,
-                                                             student["email"],
-                                                             student["present"],
-                                                             rank)
+                                                                     student["uio_username"],
+                                                                     student["username"],
+                                                                     self.university,
+                                                                     self.course,
+                                                                     student["email"],
+                                                                     student["present"],
+                                                                     rank,
+                                                                     self.org)
 
     def mark_active_repositories(self, active_since, filename=None, dayfirst=True, **kwargs):
         """Create a students file where students with active repositories are marked

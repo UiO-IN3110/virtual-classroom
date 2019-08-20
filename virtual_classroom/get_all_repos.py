@@ -21,7 +21,10 @@ def download_repositories(directory):
     parameters = get_parameters()
     university = parameters["university"]
     course = parameters["course"]
-    org = "%s-%s" % (university, course)
+    if "org" in parameters:
+        org = parameters["org"]
+    else:
+        org = "%s-%s" % (university, course)
 
     api = APIManager()
 
